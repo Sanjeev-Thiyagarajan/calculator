@@ -19,6 +19,8 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'junit:junit:4.12'
 	testImplementation 'junit:junit:4.12'
+	compile "org.springframework.data:spring-data-redis:1.8.0.RELEASE"
+	compile "redis.clients:jedis:2.9.0"
 }
 
 test {

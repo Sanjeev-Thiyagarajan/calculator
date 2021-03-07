@@ -48,5 +48,31 @@ pipeline {
                     sh "docker push sloppynetworks/java"
                }
           }
+          // stage("Deploy to staging") {
+          //      steps {
+          //           sh "docker run -d --rm -p 8765:8080 --name calculator sloppynetworks/java"
+          //      }
+          // }
+          stage("Deploy to staging") {
+               steps {
+                    sh "docker-compose up -d"
+               }
+          }
+          stage("Acceptance test") {
+               steps {
+                    sleep 60
+                    sh "./acceptance_test.sh"
+               }
+          }
+     }
+     // post {
+     //      always {
+     //           sh "docker stop calculator"
+     //      }
+     // }
+     post {
+          always {
+               sh "docker-compose down"
+          }
      }
 }
