@@ -1,4 +1,4 @@
-package com.leszko.calculator;
+package com.sanjeev.calculator;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
