@@ -40,6 +40,8 @@ pipeline {
           }
           stage("Docker Push") {
                steps {
+                    sh "echo ${env.docker-hub}"
+                    sh 'echo $env.docker-hub'
                     sh "docker push sloppynetworks/java"
                }
           }
