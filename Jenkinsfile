@@ -42,7 +42,7 @@ pipeline {
                steps {
                     withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'password', usernameVariable: 'username')]) {
                            
-                           sh 'echo $username | docker login --username=$username --password-stdin'
+                           sh 'echo $password | docker login --username=$username --password-stdin'
                     }
                     
                     sh "docker push sloppynetworks/java"
