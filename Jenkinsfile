@@ -40,8 +40,11 @@ pipeline {
           }
           stage("Docker Push") {
                steps {
-                    sh "echo ${env.docker-hub}"
-                    sh 'echo $env.docker-hub'
+                    withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'password', usernameVariable: 'username')]) {
+                           sh "echo ${username}"
+                           sh 'echo $username'
+                    }
+                    
                     sh "docker push sloppynetworks/java"
                }
           }
