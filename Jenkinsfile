@@ -35,7 +35,7 @@ pipeline {
 
           stage("Docker build") {
                steps {
-                    sh "docker build -t leszko/calculator ."
+                    sh "docker build -t sloppynetworks/java ."
                }
           }
           stage("Docker Push") {
