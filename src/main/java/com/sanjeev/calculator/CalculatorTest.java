@@ -1,4 +1,4 @@
-package com.leszko.calculator;
+package com.sanjeev.calculator;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
